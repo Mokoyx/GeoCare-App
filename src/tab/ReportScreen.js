@@ -84,14 +84,6 @@ export default function CameraScreen() {
                     />
           <Text style={{color: "firebrick", fontSize: 18, fontWeight: "bold",}}>       First Aid Request</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => console.log("Roadwork Request button has been pressed!")}>
-        <Ionicons
-                      name="car-outline"
-                      size={30}
-                      color="magenta"
-                    />
-          <Text style={{color: "magenta", fontSize: 18, fontWeight: "bold",}}>     Roadwork Request</Text>
-        </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => console.log("Fire Rescue Request button has been pressed!")}>
         <Ionicons
                       name="bonfire-outline"
@@ -99,6 +91,14 @@ export default function CameraScreen() {
                       color="orange"
                     />
           <Text style={{color: "orange", fontSize: 18, fontWeight: "bold",}}>   Fire Rescue Request</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => console.log("Fire Rescue Request button has been pressed!")}>
+        <Ionicons
+                      name="car-outline"
+                      size={30}
+                      color="darkgrey"
+                    />
+          <Text style={{color: "darkgrey", fontSize: 18, fontWeight: "bold",}}>   Fire Rescue Request</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonCamera} onPress={handleButtonPress}>
         <Ionicons
