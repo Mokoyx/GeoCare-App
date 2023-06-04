@@ -34,6 +34,7 @@ export default function CameraScreen() {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [photo, setPhoto] = useState();
   const [report, setReport] = useState();
+  const [showButton, setShowButton] = useState(true);
 
 
   useEffect(() => {
@@ -59,6 +60,57 @@ export default function CameraScreen() {
       setHasMediaLibraryPermission(mediaLibraryPermission.status === "granted");
     })();
   }, []);
+
+  const handleButtonPress = () => {
+    setShowButton(false);
+  };
+
+  if (showButton) {
+    return (
+      <SafeAreaView style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button} onPress={() => console.log("Trash Problems button has been pressed!")}>
+        <Ionicons
+                      name="trash-outline"
+                      size={30}
+                      color="darkgreen"
+                    />
+          <Text style={{color: "darkgreen", fontSize: 18, fontWeight: "bold",}}>        Trash Problems</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => console.log("First Aid Request button has been pressed!")}>
+        <Ionicons
+                      name="medkit-outline"
+                      size={30}
+                      color="firebrick"
+                    />
+          <Text style={{color: "firebrick", fontSize: 18, fontWeight: "bold",}}>       First Aid Request</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => console.log("Roadwork Request button has been pressed!")}>
+        <Ionicons
+                      name="car-outline"
+                      size={30}
+                      color="magenta"
+                    />
+          <Text style={{color: "magenta", fontSize: 18, fontWeight: "bold",}}>     Roadwork Request</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => console.log("Fire Rescue Request button has been pressed!")}>
+        <Ionicons
+                      name="bonfire-outline"
+                      size={30}
+                      color="orange"
+                    />
+          <Text style={{color: "orange", fontSize: 18, fontWeight: "bold",}}>   Fire Rescue Request</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonCamera} onPress={handleButtonPress}>
+        <Ionicons
+                      name="camera-outline"
+                      size={30}
+                      color="white"
+                    />
+          <Text style={{color: "white", fontSize: 18, fontWeight: "bold",}}>Proceed to Camera</Text>
+        </TouchableOpacity>
+      </SafeAreaView>
+    );
+  }
 
   if (hasCameraPermission === undefined) {
     return <Text>Requesting permissions...</Text>;
@@ -373,6 +425,34 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     height: "10%",
     width: "20%",
-    marginBottom: 120,
+    marginBottom: 50,
+  },
+  buttonContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  button: {
+    backgroundColor: "white",
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    alignItems:"center",
+    height: "8%",
+    width:"60%",
+    borderRadius: 10,
+    marginBottom:10,
+    flexDirection:"row",
+  },
+  buttonCamera: {
+    backgroundColor: "dodgerblue",
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    justifyContent:"space-evenly",
+    alignItems:"center",
+    height: "8%",
+    width:"60%",
+    borderRadius: 10,
+    marginBottom:10,
+    flexDirection:"row",
   },
 });
