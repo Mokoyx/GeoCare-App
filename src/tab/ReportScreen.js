@@ -69,43 +69,23 @@ export default function CameraScreen() {
     return (
       <SafeAreaView style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={() => console.log("Trash Problems button has been pressed!")}>
-        <Ionicons
-                      name="trash-outline"
-                      size={30}
-                      color="darkgreen"
-                    />
+        <Ionicons name="trash-outline" size={30} color="darkgreen" />
           <Text style={{color: "darkgreen", fontSize: 18, fontWeight: "bold",}}>        Trash Problems</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => console.log("First Aid Request button has been pressed!")}>
-        <Ionicons
-                      name="medkit-outline"
-                      size={30}
-                      color="firebrick"
-                    />
+        <Ionicons name="medkit-outline" size={30} color="firebrick" />
           <Text style={{color: "firebrick", fontSize: 18, fontWeight: "bold",}}>       First Aid Request</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => console.log("Fire Rescue Request button has been pressed!")}>
-        <Ionicons
-                      name="bonfire-outline"
-                      size={30}
-                      color="orange"
-                    />
+        <Ionicons name="bonfire-outline" size={30} color="orange" />
           <Text style={{color: "orange", fontSize: 18, fontWeight: "bold",}}>   Fire Rescue Request</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => console.log("Fire Rescue Request button has been pressed!")}>
-        <Ionicons
-                      name="car-outline"
-                      size={30}
-                      color="darkgrey"
-                    />
+        <Ionicons name="car-outline" size={30}color="darkgrey"/>
           <Text style={{color: "darkgrey", fontSize: 18, fontWeight: "bold",}}>   Fire Rescue Request</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonCamera} onPress={handleButtonPress}>
-        <Ionicons
-                      name="camera-outline"
-                      size={30}
-                      color="white"
-                    />
+        <Ionicons name="camera-outline" size={30} color="white" />
           <Text style={{color: "white", fontSize: 18, fontWeight: "bold",}}>Proceed to Camera</Text>
         </TouchableOpacity>
       </SafeAreaView>
