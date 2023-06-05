@@ -114,17 +114,6 @@ export default function CameraScreen() {
   };
 
   if (photo) {
-    let sharePic = () => {
-      shareAsync(photo.uri).then(() => {
-        setPhoto(undefined);
-      });
-    };
-
-    let savePhoto = () => {
-      MediaLibrary.saveToLibraryAsync(photo.uri).then(() => {
-        setPhoto(undefined);
-      });
-    };
     const saveReport = async () => {
       try {
         const photoRef = ref(storage, `Images/image-${Date.now()}.jpg`);
@@ -167,37 +156,11 @@ export default function CameraScreen() {
             <View style={styles.tripleButtonContain}>
               <TouchableOpacity
                 style={styles.tripleTouchable}
-                onPress={sharePic}
-              >
-                <View style={styles.tripleButtonView}>
-                  <Ionicons name="share-outline" size={25} color="lightgreen" />
-                  <Text style={styles.tripleText}> SHARE</Text>
-                </View>
-              </TouchableOpacity>
-
-              {hasMediaLibraryPermission ? (
-                <TouchableOpacity
-                  style={styles.tripleTouchable}
-                  onPress={savePhoto}
-                >
-                  <View style={styles.tripleButtonView}>
-                    <Ionicons
-                      name="save-outline"
-                      size={25}
-                      color="dodgerblue"
-                    />
-                    <Text style={styles.tripleText}> SAVE</Text>
-                  </View>
-                </TouchableOpacity>
-              ) : undefined}
-
-              <TouchableOpacity
-                style={styles.tripleTouchable}
                 onPress={() => setPhoto(undefined)}
               >
                 <View style={styles.tripleButtonView}>
                   <Ionicons name="trash-bin-outline" size={25} color="red" />
-                  <Text style={styles.tripleText}> DISCARD</Text>
+                  <Text style={styles.tripleText}> RETAKE PICTURE</Text>
                 </View>
               </TouchableOpacity>
             </View>
@@ -309,9 +272,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 2,
     borderRadius: 20,
-    width: "28%",
+    width: "50%",
     height: "60%",
-    backgroundColor: "white",
+    backgroundColor: "gainsboro",
     padding: 10,
   },
   tripleButtonView: {
@@ -436,3 +399,4 @@ const styles = StyleSheet.create({
     flexDirection:"row",
   },
 });
+s
