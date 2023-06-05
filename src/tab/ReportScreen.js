@@ -68,6 +68,9 @@ export default function CameraScreen() {
         console.log("Waste button has been pressed!");
         // Perform fire rescue request logic
         break;
+      case 'Police':
+          console.log("People button has been pressed!");
+          break;
       case 'Vehicle':
         console.log("Vehicle button has been pressed!");
         break;
@@ -80,8 +83,8 @@ export default function CameraScreen() {
       case 'Traffic':
         console.log("Traffic button has been pressed!");
         break;
-      case 'People':
-          console.log("People button has been pressed!");
+      case 'Camera':
+          console.log("Camera button has been pressed!");
           break;
       // Add more cases for other buttons if needed
       default:
@@ -116,6 +119,11 @@ export default function CameraScreen() {
       <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Calamity")}>
         <Ionicons name="boat-outline" size={30} color="darkgoldenrod" />
         <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Calamity / Flood</Text>
+      </TouchableOpacity>
+      
+      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Traffic")}>
+        <Ionicons name="car-outline" size={30} color="darkgoldenrod" />
+        <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Traffic Issues</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Camera")}>
