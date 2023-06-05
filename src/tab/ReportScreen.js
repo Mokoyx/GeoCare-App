@@ -61,33 +61,59 @@ export default function CameraScreen() {
     })();
   }, []);
 
-  const handleButtonPress = () => {
+  const handleButtonPress = (buttonId) => {
     setShowButton(false);
+    switch (buttonId) {
+      case 'TrashProblems':
+        console.log("TrashProblems button has been pressed!");
+        // Perform fire rescue request logic
+        break;
+      case 'FirstAidRequest':
+        console.log("FirstAidRequest button has been pressed!");
+        break;
+      case 'FirstAidRequest':
+        console.log("FirstAidRequest button has been pressed!");
+        break;
+      case 'FireRescueRequest':
+        console.log("FireRescueRequest button has been pressed!");
+          break;
+      case 'RoadRepairRequest':
+        console.log("RoadRepairRequest button has been pressed!");
+        break;
+      // Add more cases for other buttons if needed
+      default:
+        break;
+    }
   };
 
   if (showButton) {
+    
     return (
       <SafeAreaView style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={() => console.log("Trash Problems button has been pressed!")}>
+      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("TrashProblems")}>
         <Ionicons name="trash-outline" size={30} color="darkgreen" />
-          <Text style={{color: "darkgreen", fontSize: 18, fontWeight: "bold",}}>        Trash Problems</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => console.log("First Aid Request button has been pressed!")}>
+        <Text style={{color: "darkgreen", fontSize: 18, fontWeight: "bold"}}>Trash Problems</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("FirstAidRequest")}>
         <Ionicons name="medkit-outline" size={30} color="firebrick" />
-          <Text style={{color: "firebrick", fontSize: 18, fontWeight: "bold",}}>       First Aid Request</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => console.log("Fire Rescue Request button has been pressed!")}>
+        <Text style={{color: "firebrick", fontSize: 18, fontWeight: "bold"}}>First Aid Request</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("FireRescueRequest")}>
         <Ionicons name="bonfire-outline" size={30} color="orange" />
-          <Text style={{color: "orange", fontSize: 18, fontWeight: "bold",}}>   Fire Rescue Request</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => console.log("Fire Rescue Request button has been pressed!")}>
-        <Ionicons name="car-outline" size={30}color="darkgrey"/>
-          <Text style={{color: "darkgrey", fontSize: 18, fontWeight: "bold",}}>   Fire Rescue Request</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonCamera} onPress={handleButtonPress}>
-        <Ionicons name="camera-outline" size={30} color="white" />
-          <Text style={{color: "white", fontSize: 18, fontWeight: "bold",}}>Proceed to Camera</Text>
-        </TouchableOpacity>
+        <Text style={{color: "orange", fontSize: 18, fontWeight: "bold"}}>Fire Rescue Request</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("RoadRepairRequest")}>
+        <Ionicons name="car-outline" size={30} color="darkgrey" />
+        <Text style={{color: "darkgrey", fontSize: 18, fontWeight: "bold"}}>Car Request</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Camera")}>
+        <Ionicons name="camera-outline" size={30} color="grey" />
+        <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Proceed to Camera</Text>
+      </TouchableOpacity>
       </SafeAreaView>
     );
   }
@@ -372,6 +398,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
+    marginTop:30,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -380,23 +407,15 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 20,
     alignItems:"center",
-    height: "8%",
-    width:"60%",
-    borderRadius: 10,
+    height: "10%",
+    width:"80%",
+    shadowColor: "#000",
+    shadowOffset: { width: 1, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    borderRadius: 40,
     marginBottom:10,
     flexDirection:"row",
-  },
-  buttonCamera: {
-    backgroundColor: "dodgerblue",
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    justifyContent:"space-evenly",
-    alignItems:"center",
-    height: "8%",
-    width:"60%",
-    borderRadius: 10,
-    marginBottom:10,
-    flexDirection:"row",
+    justifyContent:"space-evenly"
   },
 });
-s
