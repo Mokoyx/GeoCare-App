@@ -64,22 +64,25 @@ export default function CameraScreen() {
   const handleButtonPress = (buttonId) => {
     setShowButton(false);
     switch (buttonId) {
-      case 'TrashProblems':
-        console.log("TrashProblems button has been pressed!");
+      case 'Waste':
+        console.log("Waste button has been pressed!");
         // Perform fire rescue request logic
         break;
-      case 'FirstAidRequest':
-        console.log("FirstAidRequest button has been pressed!");
+      case 'Vehicle':
+        console.log("Vehicle button has been pressed!");
         break;
-      case 'FirstAidRequest':
-        console.log("FirstAidRequest button has been pressed!");
+      case 'Fire':
+        console.log("Fire button has been pressed!");
         break;
-      case 'FireRescueRequest':
-        console.log("FireRescueRequest button has been pressed!");
+      case 'Calamity':
+        console.log("Calamity button has been pressed!");
           break;
-      case 'RoadRepairRequest':
-        console.log("RoadRepairRequest button has been pressed!");
+      case 'Traffic':
+        console.log("Traffic button has been pressed!");
         break;
+      case 'People':
+          console.log("People button has been pressed!");
+          break;
       // Add more cases for other buttons if needed
       default:
         break;
@@ -90,24 +93,29 @@ export default function CameraScreen() {
     
     return (
       <SafeAreaView style={styles.buttonContainer}>
-      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("TrashProblems")}>
+      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Waste")}>
         <Ionicons name="trash-outline" size={30} color="darkgreen" />
-        <Text style={{color: "darkgreen", fontSize: 18, fontWeight: "bold"}}>Trash Problems</Text>
+        <Text style={{color: "darkgreen", fontSize: 18, fontWeight: "bold"}}>Waste Management</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("FirstAidRequest")}>
+      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Police")}>
+        <Ionicons name="car-outline" size={30} color="darkgrey" />
+        <Text style={{color: "darkgrey", fontSize: 18, fontWeight: "bold"}}>Police Assistance</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Vehicle")}>
         <Ionicons name="medkit-outline" size={30} color="firebrick" />
-        <Text style={{color: "firebrick", fontSize: 18, fontWeight: "bold"}}>First Aid Request</Text>
+        <Text style={{color: "firebrick", fontSize: 18, fontWeight: "bold"}}>Vehicle Accident</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("FireRescueRequest")}>
+      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Fire")}>
         <Ionicons name="bonfire-outline" size={30} color="orange" />
         <Text style={{color: "orange", fontSize: 18, fontWeight: "bold"}}>Fire Rescue Request</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("RoadRepairRequest")}>
+      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Calamity")}>
         <Ionicons name="car-outline" size={30} color="darkgrey" />
-        <Text style={{color: "darkgrey", fontSize: 18, fontWeight: "bold"}}>Car Request</Text>
+        <Text style={{color: "darkgrey", fontSize: 18, fontWeight: "bold"}}>Calamity / Flood</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Camera")}>
