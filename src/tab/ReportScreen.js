@@ -110,7 +110,7 @@ export default function CameraScreen() {
 
       <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Fire")}>
         <Ionicons name="bonfire-outline" size={30} color="orange" />
-        <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Fire Rescue Request</Text>
+        <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Fire Emergency</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Calamity")}>
