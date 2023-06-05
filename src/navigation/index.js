@@ -47,8 +47,8 @@ function TabNavigator({ navigation }) {
         tabBarActiveTintColor: "dodgerblue",
         tabBarInactiveTintColor: "#454545",
         tabBarLabelStyle: {
-          paddingBottom: 6,
-          fontSize: 14,
+          paddingBottom: 3,
+          fontSize: 12,
         },
       })}
     >
