@@ -94,6 +94,7 @@ export default function CameraScreen() {
 
   const handleCancelPress = () => {
     setShowButton(true);
+    setPhoto(undefined);
   };
 
   if (showButton) {
