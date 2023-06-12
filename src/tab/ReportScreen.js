@@ -202,7 +202,7 @@ export default function CameraScreen() {
               >
                 <View style={styles.tripleButtonView}>
                   <Ionicons name="trash-bin-outline" size={25} color="red" />
-                  <Text style={styles.tripleText}> RETAKE PICTURE</Text>
+                  <Text style={styles.tripleText}>RETAKE PICTURE</Text>
                 </View>
               </TouchableOpacity>
             </View>
