@@ -97,7 +97,7 @@ export default function CameraScreen() {
   if (showButton) {
     return (
       <SafeAreaView style={styles.buttonContainer}>
-        <Text style={{color: "orange", fontSize: 25, fontWeight: "bold", marginBottom:40}}>-SELECT TYPE OF REPORT-</Text>
+        <Text style={{color: "orange", fontSize: 25, fontWeight: "bold", marginBottom:40}}>- SELECT TYPE OF REPORT -</Text>
       <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Waste")}>
         <Ionicons name="trash-outline" size={30} color="darkgreen" />
         <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Waste Management</Text>
