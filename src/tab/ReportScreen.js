@@ -92,8 +92,11 @@ export default function CameraScreen() {
     }
   };
 
+  const handleCancelPress = () => {
+    setShowButton(true);
+  };
+
   if (showButton) {
-    
     return (
       <SafeAreaView style={styles.buttonContainer}>
       <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Waste")}>
@@ -233,7 +236,7 @@ export default function CameraScreen() {
             <View style={styles.doubleButtonContainer}>
               <TouchableOpacity
                 style={styles.doubleTouchable}
-                onPress={() => setPhoto(undefined)}
+                onPress={handleCancelPress}
               >
                 <View style={styles.doubleTouchableView}>
                   <Ionicons name="trash-bin-outline" size={25} color="grey" />
