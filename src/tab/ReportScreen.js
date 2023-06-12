@@ -124,7 +124,8 @@ export default function CameraScreen() {
       </TouchableOpacity>
       
       <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Traffic")}>
-        <Ionicons name="car-outline" size={30} color="darkcyan" />
+        <Ionicons name="car-outline" size={30} color="darkcyan
+        " />
         <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Traffic Issues</Text>
       </TouchableOpacity>
       </SafeAreaView>
@@ -207,7 +208,7 @@ export default function CameraScreen() {
             <View style={styles.reportMainContainer}>
               <View style={styles.reportContainer}>
                 <View style={styles.reportView}>
-                  <Text style={styles.reportText}>Enter Report Here:</Text>
+                  <Text style={styles.reportText}>Enter Detail's Here:</Text>
                 </View>
                 <View
                   style={{
