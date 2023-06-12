@@ -95,15 +95,17 @@ export default function EarthScreen({ navigation, route }) {
             }}
           >
             <Callout>
-              <View style={{ flex: 1, alignItems: "center" }}>
-                <Text>Report: {report.reportText}</Text>
-                <Text>Latitude: {report.location.latitude.toFixed(4)}</Text>
-                <Text>Longitude: {report.location.longitude.toFixed(4)}</Text>
+              <View style={styles.pop}>
                 <Image
                   style={styles.img}
                   resizeMode="contain"
                   source={{ uri: report.photo }}
                 />
+                <View>
+                  <Text>Report: {report.reportText}</Text>
+                  <Text>Latitude: {report.location.latitude.toFixed(4)}</Text>
+                  <Text>Longitude: {report.location.longitude.toFixed(4)}</Text>
+                </View>
               </View>
             </Callout>
           </Marker>
@@ -125,5 +127,10 @@ const styles = StyleSheet.create({
   img: {
     width: 120,
     height: 80,
+  },
+  pop:{ 
+    flex: 1, 
+    alignItems: "center", 
+    flexDirection:"row" 
   },
 });
