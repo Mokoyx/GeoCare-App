@@ -83,9 +83,6 @@ export default function CameraScreen() {
       case 'Traffic':
         console.log("Traffic button has been pressed!");
         break;
-      case 'Camera':
-          console.log("Camera button has been pressed!");
-          break;
       // Add more cases for other buttons if needed
       default:
         break;
@@ -100,6 +97,7 @@ export default function CameraScreen() {
   if (showButton) {
     return (
       <SafeAreaView style={styles.buttonContainer}>
+        <Text style={{color: "orange", fontSize: 25, fontWeight: "bold", marginBottom:40}}>-SELECT TYPE OF REPORT-</Text>
       <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Waste")}>
         <Ionicons name="trash-outline" size={30} color="darkgreen" />
         <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Waste Management</Text>
@@ -128,11 +126,6 @@ export default function CameraScreen() {
       <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Traffic")}>
         <Ionicons name="car-outline" size={30} color="slateblue" />
         <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Traffic Issues</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Camera")}>
-        <Ionicons name="camera-outline" size={30} color="grey" />
-        <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Proceed to Camera</Text>
       </TouchableOpacity>
       </SafeAreaView>
     );
