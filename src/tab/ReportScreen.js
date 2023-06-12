@@ -119,12 +119,12 @@ export default function CameraScreen() {
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Calamity")}>
-        <Ionicons name="boat-outline" size={30} color="darkgoldenrod" />
+        <Ionicons name="boat-outline" size={30} color="cornflowerblue" />
         <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Calamity / Flood</Text>
       </TouchableOpacity>
       
       <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Traffic")}>
-        <Ionicons name="car-outline" size={30} color="slateblue" />
+        <Ionicons name="car-outline" size={30} color="darkcyan" />
         <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Traffic Issues</Text>
       </TouchableOpacity>
       </SafeAreaView>
