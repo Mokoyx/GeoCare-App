@@ -15,7 +15,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import * as Location from "expo-location";
 import { Camera } from "expo-camera";
-import { shareAsync } from "expo-sharing";
 import * as MediaLibrary from "expo-media-library";
 import { collection, doc, setDoc } from "firebase/firestore";
 import { db, storage } from "../../config/firebase";
