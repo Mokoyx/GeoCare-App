@@ -15,6 +15,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import * as Location from "expo-location";
 import { Camera } from "expo-camera";
+import { shareAsync } from "expo-sharing";
 import * as MediaLibrary from "expo-media-library";
 import { collection, doc, setDoc } from "firebase/firestore";
 import { db, storage } from "../../config/firebase";
@@ -34,7 +35,12 @@ export default function CameraScreen() {
   const [photo, setPhoto] = useState();
   const [report, setReport] = useState();
   const [showButton, setShowButton] = useState(true);
-
+  const [waste, setWaste] = useState(false);
+  const [police, setPolice] = useState(false);
+  const [vehicle, setVehicle] = useState(false);
+  const [fire, setFire] = useState(false);
+  const [calamity, setCalamity] = useState(false);
+  const [traffic, setTraffic] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -60,34 +66,30 @@ export default function CameraScreen() {
     })();
   }, []);
 
-  const handleButtonPress = (buttonId) => {
+  const handleButtonPress = () => {
     setShowButton(false);
-    switch (buttonId) {
-      case 'Waste':
-        console.log("Waste button has been pressed!");
-        // Perform fire rescue request logic
-        break;
-      case 'Police':
-          console.log("People button has been pressed!");
-          break;
-      case 'Vehicle':
-        console.log("Vehicle button has been pressed!");
-        break;
-      case 'Fire':
-        console.log("Fire button has been pressed!");
-        break;
-      case 'Calamity':
-        console.log("Calamity button has been pressed!");
-          break;
-      case 'Traffic':
-        console.log("Traffic button has been pressed!");
-        break;
-      // Add more cases for other buttons if needed
-      default:
-        break;
-    }
+    setWaste(true);
   };
-
+  const handleButtonPress2 = () => {
+    setShowButton(false);
+    setPolice(true);
+  };
+  const handleButtonPress3 = () => {
+    setShowButton(false);
+    setVehicle(true);
+  };
+  const handleButtonPress4 = () => {
+    setShowButton(false);
+    setFire(true);
+  };
+  const handleButtonPress5 = () => {
+    setShowButton(false);
+    setCalamity(true);
+  };
+  const handleButtonPress6 = () => {
+    setShowButton(false);
+    setTraffic(true);
+  };
   const handleCancelPress = () => {
     setShowButton(true);
     setPhoto(undefined);
@@ -96,36 +98,75 @@ export default function CameraScreen() {
   if (showButton) {
     return (
       <SafeAreaView style={styles.buttonContainer}>
-        <Text style={{color: "orange", fontSize: 25, fontWeight: "bold", marginBottom:40}}>- SELECT TYPE OF REPORT -</Text>
-      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Waste")}>
-        <Ionicons name="trash-outline" size={30} color="darkgreen" />
-        <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Waste Management</Text>
-      </TouchableOpacity>
+        <Text
+          style={{
+            color: "orange",
+            fontSize: 25,
+            fontWeight: "bold",
+            marginBottom: 40,
+          }}
+        >
+          - SELECT TYPE OF REPORT -
+        </Text>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress("Waste")}
+        >
+          <Ionicons name="trash-outline" size={30} color="darkgreen" />
+          <Text style={{ color: "grey", fontSize: 18, fontWeight: "bold" }}>
+            Waste Management
+          </Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Police")}>
-        <Ionicons name="shield-outline" size={30} color="blue" />
-        <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Police Assistance</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress2("Police")}
+        >
+          <Ionicons name="shield-outline" size={30} color="blue" />
+          <Text style={{ color: "grey", fontSize: 18, fontWeight: "bold" }}>
+            Police Assistance
+          </Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Vehicle")}>
-        <Ionicons name="medkit-outline" size={30} color="firebrick" />
-        <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Vehicle Accident</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress3("Vehicle")}
+        >
+          <Ionicons name="medkit-outline" size={30} color="firebrick" />
+          <Text style={{ color: "grey", fontSize: 18, fontWeight: "bold" }}>
+            Vehicle Accident
+          </Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Fire")}>
-        <Ionicons name="bonfire-outline" size={30} color="orange" />
-        <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Fire Emergency</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress4("Fire")}
+        >
+          <Ionicons name="bonfire-outline" size={30} color="orange" />
+          <Text style={{ color: "grey", fontSize: 18, fontWeight: "bold" }}>
+            Fire Emergency
+          </Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Calamity")}>
-        <Ionicons name="boat-outline" size={30} color="cornflowerblue" />
-        <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Calamity / Flood</Text>
-      </TouchableOpacity>
-      
-      <TouchableOpacity style={styles.button} onPress={() => handleButtonPress("Traffic")}>
-        <Ionicons name="car-outline" size={30} color="darkcyan" />
-        <Text style={{color: "grey", fontSize: 18, fontWeight: "bold"}}>Traffic Issues</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress5("Calamity")}
+        >
+          <Ionicons name="boat-outline" size={30} color="cornflowerblue" />
+          <Text style={{ color: "grey", fontSize: 18, fontWeight: "bold" }}>
+            Calamity / Flood
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleButtonPress6("Traffic")}
+        >
+          <Ionicons name="car-outline" size={30} color="darkcyan" />
+          <Text style={{ color: "grey", fontSize: 18, fontWeight: "bold" }}>
+            Traffic Issues
+          </Text>
+        </TouchableOpacity>
       </SafeAreaView>
     );
   }
@@ -166,6 +207,12 @@ export default function CameraScreen() {
           reportText: report,
           photo: photoUrl,
           done: false,
+          waste: waste,
+          police: police,
+          vehicle: vehicle,
+          fire: fire,
+          calamity: calamity,
+          traffic: traffic,
           date: Date.now(),
         }).then(() => {
           navigation.navigate("Map");
@@ -410,7 +457,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
-    marginTop:30,
+    marginTop: 30,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -418,16 +465,16 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     paddingVertical: 12,
     paddingHorizontal: 20,
-    alignItems:"center",
+    alignItems: "center",
     height: "10%",
-    width:"80%",
+    width: "80%",
     shadowColor: "#000",
     shadowOffset: { width: 1, height: 1 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
     borderRadius: 40,
-    marginBottom:10,
-    flexDirection:"row",
-    justifyContent:"space-around",
+    marginBottom: 10,
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
 });

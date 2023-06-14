@@ -102,9 +102,106 @@ export default function EarthScreen({ navigation, route }) {
                   source={{ uri: report.photo }}
                 />
                 <View style={styles.rep}>
+                  {report.waste &&
+                    !report.police &&
+                    !report.vehicle &&
+                    !report.fire &&
+                    !report.calamity &&
+                    !report.traffic && (
+                      <View style={styles.iconContainer}>
+                        <Text style={styles.word}>
+                          <Ionicons
+                            name="trash"
+                            style={{ fontSize: 20, color: "green" }}
+                          />
+                          Waste Management
+                        </Text>
+                      </View>
+                    )}
+                  {report.police &&
+                    !report.waste &&
+                    !report.vehicle &&
+                    !report.fire &&
+                    !report.calamity &&
+                    !report.traffic && (
+                      <View style={styles.iconContainer}>
+                        <Text style={styles.word}>
+                          <Ionicons name="car" style={{ fontSize: 20 }} />
+                          Police Assistance
+                        </Text>
+                      </View>
+                    )}
+                  {report.vehicle &&
+                    !report.police &&
+                    !report.waste &&
+                    !report.fire &&
+                    !report.calamity &&
+                    !report.traffic && (
+                      <View style={styles.iconContainer}>
+                        <Text style={styles.word}>
+                          <Ionicons
+                            name="car-outline"
+                            style={{ fontSize: 20, color: "red" }}
+                          />
+                          Vehicle Accident
+                        </Text>
+                      </View>
+                    )}
+                  {report.fire &&
+                    !report.police &&
+                    !report.waste &&
+                    !report.vehicle &&
+                    !report.calamity &&
+                    !report.traffic && (
+                      <View style={styles.iconContainer}>
+                        <Text style={styles.word}>
+                          <Ionicons
+                            name="flame"
+                            style={{ fontSize: 20, color: "orange" }}
+                          />
+                          Fire Emergency
+                        </Text>
+                      </View>
+                    )}
+                  {report.calamity &&
+                    !report.police &&
+                    !report.waste &&
+                    !report.vehicle &&
+                    !report.fire &&
+                    !report.traffic && (
+                      <View style={styles.iconContainer}>
+                        <Text style={styles.word}>
+                          <Ionicons
+                            name="water"
+                            style={{ fontSize: 20, color: "blue" }}
+                          />
+                          Calamity/Flood
+                        </Text>
+                      </View>
+                    )}
+                  {report.traffic &&
+                    !report.police &&
+                    !report.waste &&
+                    !report.vehicle &&
+                    !report.fire &&
+                    !report.calamity && (
+                      <View style={styles.iconContainer}>
+                        <Text style={styles.word}>
+                          <Ionicons
+                            name="traffic-light"
+                            style={{ fontSize: 20, color: "red" }}
+                          />
+                          Traffic Issues
+                        </Text>
+                      </View>
+                    )}
                   <Text style={styles.word}>Report: {report.reportText}</Text>
-                  <Text style={styles.word}>Latitude: {report.location.latitude.toFixed(4)}</Text>
-                  <Text style={styles.word}>Longitude: {report.location.longitude.toFixed(4)}</Text>
+                  <Text style={styles.word}>
+                    Latitude: {report.location.latitude.toFixed(4)}
+                  </Text>
+                  <Text style={styles.word}>
+                    Longitude: {report.location.longitude.toFixed(4)}
+                  </Text>
                 </View>
               </View>
             </Callout>
@@ -128,18 +225,18 @@ const styles = StyleSheet.create({
     width: 120,
     height: 80,
   },
-  pop:{ 
-    flex: 1, 
-    alignItems: "center", 
-    flexDirection:"row",
-    justifyContent:"space-evenly",
+  pop: {
+    flex: 1,
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
   },
-  word:{
-    fontWeight:'bold',
-    fontSize:15,
+  word: {
+    fontWeight: "bold",
+    fontSize: 15,
     marginTop: 5,
   },
-  rep:{
-    marginRight:10
-  }
+  rep: {
+    marginRight: 10,
+  },
 });
