@@ -164,7 +164,7 @@ export default function CameraScreen() {
         >
           <Ionicons name="car" size={30} color="darkcyan" />
           <Text style={{ color: "grey", fontSize: 18, fontWeight: "bold" }}>
-            Traffic Issues
+            Traffic Management
           </Text>
         </TouchableOpacity>
       </SafeAreaView>

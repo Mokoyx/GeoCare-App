@@ -208,7 +208,7 @@ export default function EarthScreen({ navigation, route }) {
                             name="car"
                             style={{ fontSize: 20, color: "darkcyan" }}
                           />
-                          Traffic Issues
+                          Traffic Management
                           <Ionicons
                             name="car"
                             style={{ fontSize: 20, color: "darkcyan" }}
