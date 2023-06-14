@@ -112,7 +112,7 @@ export default function CameraScreen() {
           style={styles.button}
           onPress={() => handleButtonPress("Waste")}
         >
-          <Ionicons name="trash-outline" size={30} color="darkgreen" />
+          <Ionicons name="trash" size={30} color="green" />
           <Text style={{ color: "grey", fontSize: 18, fontWeight: "bold" }}>
             Waste Management
           </Text>
@@ -122,7 +122,7 @@ export default function CameraScreen() {
           style={styles.button}
           onPress={() => handleButtonPress2("Police")}
         >
-          <Ionicons name="shield-outline" size={30} color="blue" />
+          <Ionicons name="star" size={30} color="gold" />
           <Text style={{ color: "grey", fontSize: 18, fontWeight: "bold" }}>
             Police Assistance
           </Text>
@@ -132,9 +132,9 @@ export default function CameraScreen() {
           style={styles.button}
           onPress={() => handleButtonPress3("Vehicle")}
         >
-          <Ionicons name="medkit-outline" size={30} color="firebrick" />
+          <Ionicons name="medkit" size={30} color="firebrick" />
           <Text style={{ color: "grey", fontSize: 18, fontWeight: "bold" }}>
-            Vehicle Accident
+            First Aid Emergency
           </Text>
         </TouchableOpacity>
 
@@ -142,7 +142,7 @@ export default function CameraScreen() {
           style={styles.button}
           onPress={() => handleButtonPress4("Fire")}
         >
-          <Ionicons name="bonfire-outline" size={30} color="orange" />
+          <Ionicons name="bonfire" size={30} color="orange" />
           <Text style={{ color: "grey", fontSize: 18, fontWeight: "bold" }}>
             Fire Emergency
           </Text>
@@ -152,7 +152,7 @@ export default function CameraScreen() {
           style={styles.button}
           onPress={() => handleButtonPress5("Calamity")}
         >
-          <Ionicons name="boat-outline" size={30} color="cornflowerblue" />
+          <Ionicons name="water" size={30} color="cornflowerblue" />
           <Text style={{ color: "grey", fontSize: 18, fontWeight: "bold" }}>
             Calamity / Flood
           </Text>
@@ -162,7 +162,7 @@ export default function CameraScreen() {
           style={styles.button}
           onPress={() => handleButtonPress6("Traffic")}
         >
-          <Ionicons name="car-outline" size={30} color="darkcyan" />
+          <Ionicons name="car" size={30} color="darkcyan" />
           <Text style={{ color: "grey", fontSize: 18, fontWeight: "bold" }}>
             Traffic Issues
           </Text>

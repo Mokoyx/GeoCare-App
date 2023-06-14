@@ -104,94 +104,115 @@ export default function EarthScreen({ navigation, route }) {
                 <View style={styles.rep}>
                   {report.waste &&
                     !report.police &&
-                    !report.vehicle &&
+                    !report.aid &&
                     !report.fire &&
                     !report.calamity &&
                     !report.traffic && (
-                      <View style={styles.iconContainer}>
+                      <View>
                         <Text style={styles.word}>
                           <Ionicons
                             name="trash"
                             style={{ fontSize: 20, color: "green" }}
                           />
                           Waste Management
+                          <Ionicons
+                            name="trash"
+                            style={{ fontSize: 20, color: "green" }}
+                          />
                         </Text>
                       </View>
                     )}
                   {report.police &&
                     !report.waste &&
-                    !report.vehicle &&
+                    !report.aid &&
                     !report.fire &&
                     !report.calamity &&
                     !report.traffic && (
-                      <View style={styles.iconContainer}>
+                      <View>
                         <Text style={styles.word}>
-                          <Ionicons name="car" style={{ fontSize: 20 }} />
+                          <Ionicons name="star" style={{ fontSize: 20 , color:"gold"}} />
                           Police Assistance
+                          <Ionicons name="star" style={{ fontSize: 20 , color:"gold"}} />
                         </Text>
                       </View>
                     )}
-                  {report.vehicle &&
+                  {report.aid &&
                     !report.police &&
                     !report.waste &&
                     !report.fire &&
                     !report.calamity &&
                     !report.traffic && (
-                      <View style={styles.iconContainer}>
+                      <View>
                         <Text style={styles.word}>
                           <Ionicons
                             name="car-outline"
-                            style={{ fontSize: 20, color: "red" }}
+                            style={{ fontSize: 20, color: "firebrick" }}
                           />
-                          Vehicle Accident
+                          First Aid Emergency
+                          <Ionicons
+                            name="car-outline"
+                            style={{ fontSize: 20, color: "firebrick" }}
+                          />
                         </Text>
                       </View>
                     )}
                   {report.fire &&
                     !report.police &&
                     !report.waste &&
-                    !report.vehicle &&
+                    !report.aid &&
                     !report.calamity &&
                     !report.traffic && (
-                      <View style={styles.iconContainer}>
+                      <View>
                         <Text style={styles.word}>
                           <Ionicons
-                            name="flame"
+                            name="bonfire"
                             style={{ fontSize: 20, color: "orange" }}
                           />
                           Fire Emergency
+                          <Ionicons
+                            name="bonfire"
+                            style={{ fontSize: 20, color: "orange" }}
+                          />
                         </Text>
                       </View>
                     )}
                   {report.calamity &&
                     !report.police &&
                     !report.waste &&
-                    !report.vehicle &&
+                    !report.aid &&
                     !report.fire &&
                     !report.traffic && (
-                      <View style={styles.iconContainer}>
+                      <View>
                         <Text style={styles.word}>
                           <Ionicons
                             name="water"
-                            style={{ fontSize: 20, color: "blue" }}
+                            style={{ fontSize: 20, color: "cornflowerblue" }}
                           />
                           Calamity/Flood
+                          <Ionicons
+                            name="water"
+                            style={{ fontSize: 20, color: "cornflowerblue" }}
+                          />
                         </Text>
                       </View>
                     )}
                   {report.traffic &&
                     !report.police &&
                     !report.waste &&
-                    !report.vehicle &&
+                    !report.aid &&
                     !report.fire &&
                     !report.calamity && (
-                      <View style={styles.iconContainer}>
+                      <View>
                         <Text style={styles.word}>
                           <Ionicons
-                            name="traffic-light"
-                            style={{ fontSize: 20, color: "red" }}
+                            name="car"
+                            style={{ fontSize: 20, color: "darkcyan" }}
                           />
                           Traffic Issues
+                          <Ionicons
+                            name="car"
+                            style={{ fontSize: 20, color: "darkcyan" }}
+                          />
                         </Text>
                       </View>
                     )}
