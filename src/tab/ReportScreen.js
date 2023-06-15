@@ -15,9 +15,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import * as Location from "expo-location";
 import { Camera } from "expo-camera";
-import { shareAsync } from "expo-sharing";
 import * as MediaLibrary from "expo-media-library";
-import { collection, doc, setDoc } from "firebase/firestore";
+import { Timestamp, collection, doc, setDoc } from "firebase/firestore";
 import { db, storage } from "../../config/firebase";
 import { useNavigation } from "@react-navigation/native";
 import { uploadBytes, ref, getDownloadURL } from "firebase/storage";
@@ -30,7 +29,7 @@ export default function CameraScreen() {
 
   let cameraRef = useRef();
   const [hasCameraPermission, setHasCameraPermission] = useState();
-  const [hasMediaLibraryPermission, setHasMediaLibraryPermission] = useState();
+  const [setHasMediaLibraryPermission] = useState();
   const [currentLocation, setCurrentLocation] = useState(null);
   const [photo, setPhoto] = useState();
   const [report, setReport] = useState();
@@ -200,7 +199,7 @@ export default function CameraScreen() {
         const blob = await response.blob();
         await uploadBytes(photoRef, blob);
         const photoUrl = await getDownloadURL(photoRef);
-
+    
         const reportsCollection = collection(db, "reports");
         setDoc(doc(reportsCollection), {
           location: currentLocation, // Save the current location
@@ -213,7 +212,7 @@ export default function CameraScreen() {
           fire: fire,
           calamity: calamity,
           traffic: traffic,
-          date: Date.now(),
+          date: new Date().toUTCString(),
         }).then(() => {
           navigation.navigate("Map");
           console.log("Report saved successfully");
@@ -225,6 +224,7 @@ export default function CameraScreen() {
         console.error("Error saving report: ", error);
       }
     };
+    
 
     return (
       <TouchableWithoutFeedback onPress={dismissKeyboard}>
