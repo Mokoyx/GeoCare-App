@@ -85,7 +85,6 @@ export default function EarthScreen({ navigation, route }) {
         }}
         showsUserLocation={true}
       >
-        {/* Render markers for each report */}
         {reports.map((report, index) => (
           <Marker
             key={index}
