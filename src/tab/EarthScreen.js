@@ -104,7 +104,7 @@ export default function EarthScreen({ navigation, route }) {
                 <View style={styles.rep}>
                   {report.waste &&
                     !report.police &&
-                    !report.aid &&
+                    !report.vehicle &&
                     !report.fire &&
                     !report.calamity &&
                     !report.traffic && (
@@ -124,7 +124,7 @@ export default function EarthScreen({ navigation, route }) {
                     )}
                   {report.police &&
                     !report.waste &&
-                    !report.aid &&
+                    !report.vehicle &&
                     !report.fire &&
                     !report.calamity &&
                     !report.traffic && (
@@ -136,7 +136,7 @@ export default function EarthScreen({ navigation, route }) {
                         </Text>
                       </View>
                     )}
-                  {report.aid &&
+                  {report.vehicle &&
                     !report.police &&
                     !report.waste &&
                     !report.fire &&
@@ -159,7 +159,7 @@ export default function EarthScreen({ navigation, route }) {
                   {report.fire &&
                     !report.police &&
                     !report.waste &&
-                    !report.aid &&
+                    !report.vehicle &&
                     !report.calamity &&
                     !report.traffic && (
                       <View>
@@ -179,7 +179,7 @@ export default function EarthScreen({ navigation, route }) {
                   {report.calamity &&
                     !report.police &&
                     !report.waste &&
-                    !report.aid &&
+                    !report.vehicle &&
                     !report.fire &&
                     !report.traffic && (
                       <View>
@@ -199,7 +199,7 @@ export default function EarthScreen({ navigation, route }) {
                   {report.traffic &&
                     !report.police &&
                     !report.waste &&
-                    !report.aid &&
+                    !report.vehicle &&
                     !report.fire &&
                     !report.calamity && (
                       <View>
